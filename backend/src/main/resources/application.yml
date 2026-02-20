@@ -1,0 +1,14 @@
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+spotify:
+  client-id: ${SPOTIFY_CLIENT_ID:your-client-id}
+  client-secret: ${SPOTIFY_CLIENT_SECRET:your-client-secret}
+  redirect-uri: ${SPOTIFY_REDIRECT_URI:http://localhost:4200/callback}
+  scopes: user-read-private user-read-email playlist-read-private playlist-modify-public playlist-modify-private user-library-read user-library-modify user-read-playback-state user-modify-playback-state streaming
