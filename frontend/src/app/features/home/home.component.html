@@ -1,0 +1,21 @@
+<section class="hero">
+  <h2>Production-grade Spotify client starter</h2>
+  <p>Authenticate with Spotify, load your profile, and search tracks with debounced requests.</p>
+  <div class="actions">
+    <button (click)="connect()">Connect Spotify</button>
+    <button class="secondary" (click)="loadProfile()">Load Profile</button>
+  </div>
+  <p class="status">Session: {{ profile() }}</p>
+</section>
+
+<section>
+  <label for="search">Search Spotify</label>
+  <input id="search" [formControl]="searchControl" placeholder="Search track, artist, album..." />
+
+  <ul>
+    <li *ngFor="let track of tracks()">
+      <strong>{{ track.name }}</strong>
+      <span>{{ track.artists }}</span>
+    </li>
+  </ul>
+</section>

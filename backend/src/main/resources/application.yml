@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+spotify:
+  client-id: ${SPOTIFY_CLIENT_ID:}
+  client-secret: ${SPOTIFY_CLIENT_SECRET:}
+  redirect-uri: ${SPOTIFY_REDIRECT_URI:http://localhost:8080/api/auth/callback}
+  scopes: ${SPOTIFY_SCOPES:user-read-private user-read-email playlist-read-private user-library-read}
+  accounts-base-url: https://accounts.spotify.com
+  api-base-url: https://api.spotify.com/v1
+  frontend-base-url: ${FRONTEND_BASE_URL:http://localhost:4200}
