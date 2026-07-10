@@ -19,7 +19,7 @@ class SpotifyServiceTest {
         Mockito.when(spotifyApiClient.get(Mockito.eq("/search"), Mockito.eq("token"), Mockito.anyMap()))
                 .thenReturn(Map.of("ok", true));
 
-        Map<String, Object> response = spotifyService.search("token", new SearchRequest("Muse", null, null, null));
+        Map<String, Object> response = spotifyService.search("token", new SearchRequest("Muse", null,null, null, null));
 
         assertThat(response).containsEntry("ok", true);
         Mockito.verify(spotifyApiClient).get("/search", "token", Map.of(

@@ -22,17 +22,28 @@ public class AppConfig {
                 .connectTimeout(Duration.ofSeconds(5))
                 .build();
 
+        JdkClientHttpRequestFactory factory = new JdkClientHttpRequestFactory(httpClient);
+        factory.setReadTimeout(Duration.ofSeconds(10));
+
         return RestClient.builder()
                 .baseUrl("https://api.spotify.com/v1")
-                .requestFactory(new JdkClientHttpRequestFactory(httpClient))
+                .requestFactory(factory)
                 .build();
     }
 
     @Bean
     CacheManager cacheManager() {
-        CaffeineCacheManager cacheManager = new CaffeineCacheManager("featured", "new-releases", "categories");
+        CaffeineCacheManager cacheManager = new CaffeineCacheManager(
+                "featured",
+                "new-releases",
+                "categories",
+                "recommendations",
+                "artist",
+                "album",
+                "playlist"
+        );
         cacheManager.setCaffeine(Caffeine.newBuilder()
-                .maximumSize(500)
+                .maximumSize(1000)
                 .expireAfterWrite(Duration.ofMinutes(10)));
         return cacheManager;
     }

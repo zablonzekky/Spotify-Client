@@ -11,4 +11,26 @@ spotify:
   client-id: ${SPOTIFY_CLIENT_ID:your-client-id}
   client-secret: ${SPOTIFY_CLIENT_SECRET:your-client-secret}
   redirect-uri: ${SPOTIFY_REDIRECT_URI:http://localhost:4200/callback}
+  api-base-url: https://api.spotify.com/v1
+  auth-url: https://accounts.spotify.com
+  connect-timeout: 5000
+  read-timeout: 10000
   scopes: user-read-private user-read-email playlist-read-private playlist-modify-public playlist-modify-private user-library-read user-library-modify user-read-playback-state user-modify-playback-state streaming
+
+spring:
+  security:
+    user:
+      name: admin
+      password: secret
+  cache:
+    type: caffeine
+    cache-names: featured,new-releases,categories,recommendations,artist,album,playlist
+    caffeine:
+      spec: maximumSize=500,expireAfterWrite=600s
+
+cors:
+  allowed-origins: http://localhost:4200
+
+logging:
+  level:
+    com.spotifyclient: DEBUG

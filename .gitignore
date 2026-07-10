@@ -1,0 +1,121 @@
+# ─── Secrets & Environment ───────────────────────────────────────────────────
+.env
+.env.*
+*.secret
+secrets/
+application-local.yml
+application-local.properties
+
+# ─── Backend: Spring Boot / Maven ────────────────────────────────────────────
+backend/target/
+backend/.mvn/wrapper/maven-wrapper.jar
+backend/*.jar
+backend/*.war
+backend/*.class
+
+# Spring Boot dev tools
+backend/.factorypath
+backend/.apt_generated/
+backend/.apt_generated_tests/
+
+# IntelliJ / Eclipse project files in backend
+backend/.idea/
+backend/*.iml
+backend/*.ipr
+backend/*.iws
+backend/.classpath
+backend/.project
+backend/.settings/
+backend/out/
+
+# ─── Frontend: Angular ────────────────────────────────────────────────────────
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+frontend/.sass-cache/
+frontend/connect.lock
+frontend/coverage/
+frontend/libpeerconnection.log
+frontend/npm-debug.log*
+frontend/yarn-error.log
+frontend/testem.log
+frontend/typings/
+
+# Angular cache
+frontend/.angular/cache/
+
+# ─── Node / npm / yarn ───────────────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+.pnp
+.pnp.js
+
+# ─── IDEs & Editors ──────────────────────────────────────────────────────────
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# VS Code
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# Eclipse
+.classpath
+.project
+.settings/
+.factorypath
+
+# NetBeans
+nbproject/
+nbbuild/
+nbdist/
+.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# ─── OS Files ────────────────────────────────────────────────────────────────
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptionkey
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+# ─── Logs ────────────────────────────────────────────────────────────────────
+*.log
+logs/
+log/
+
+# ─── Docker ──────────────────────────────────────────────────────────────────
+# Keep Dockerfiles but ignore generated compose overrides
+docker-compose.override.yml
+
+# ─── Testing & Coverage ──────────────────────────────────────────────────────
+backend/target/surefire-reports/
+backend/target/failsafe-reports/
+
+# ─── Misc ────────────────────────────────────────────────────────────────────
+*.tmp
+*.swp
+*.bak
+.cache/

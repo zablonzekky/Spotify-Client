@@ -6,6 +6,7 @@ public record SearchRequest(
         @NotBlank String query,
         String types,
         Integer limit,
-        String market
+        String market,
+        Integer offset
 ) {
 }
